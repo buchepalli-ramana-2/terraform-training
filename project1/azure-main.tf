@@ -3,9 +3,11 @@ resource "azurerm_resource_group" "name" {
   location = "southindia"
   tags = {
     "app" = "tfcloud"
+    "test" = "github-commit"
   }
 
 }
+
 
 # resource "aws_s3_bucket" "example" {
 #   bucket = "my-tf-train-bucket"
