@@ -8,11 +8,15 @@ resource "azurerm_resource_group" "name" {
 
 }
 
-resource "azurerm_public_ip" "my_terraform_public_ip" {
-  name                = "cost-testing-public-ip"
+resource "azurerm_app_service_plan" "example" {
+  name                = "api-appserviceplan-pro"
   location            = azurerm_resource_group.name.location
   resource_group_name = azurerm_resource_group.name.name
-  allocation_method   = "Dynamic"
+
+  sku {
+    tier = "Standard"
+    size = "S1"
+  }
 }
 
 
